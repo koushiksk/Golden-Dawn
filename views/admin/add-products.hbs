@@ -1,0 +1,120 @@
+<div class="menu-container" id="menu">
+  <span onclick="toggleMenu()">
+    ×
+  </span>
+  <a href="/admin">
+    All Product
+  </a>
+  <a href="/">
+    User Panel
+  </a>
+  <a href="/admin/allorders">
+    All Orders
+  </a>
+  <a href="/admin/allusers">
+    All Users
+  </a>
+  <a href="/admin/add-product" class="add-product">
+    Add Product
+  </a>
+  <a href="/logout" onclick="return confirm('Do You Want to logout ?')">
+    Logout
+  </a>
+</div>
+<header>
+  <div class="navbar">
+    <a href="/admin" class="logo">
+      Admin Panel
+    </a>
+    <div class="nav-links">
+      <a href="/admin">
+        All Product
+      </a>
+      <a href="/">
+        User Panel
+      </a>
+      <a href="/admin/allorders">
+        All Orders
+      </a>
+      <a href="/admin/allusers">
+        All Users
+      </a>
+       
+      <a
+        href="/logout"
+        id="logout-normal"
+        class="notification"
+        onclick="return confirm('Do You Want to logout ?')"
+      >
+        <span>
+          Logout
+        </span>
+      </a>
+    </div>
+    <div class="menu">
+      <i class="fas fa-bars" onclick="toggleMenu()"></i>
+    </div>
+  </div>
+  <div class="search" style="display: none;">
+    <form action="/admin/search" method="GET">
+      <div class="input">
+        <input
+          type="text"
+          name="query"
+          placeholder="Serach.."
+          value="{{query}}"
+          required
+        />
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</header>
+
+
+
+<div class="login-container" style="margin-top: 175px;">
+    <div class="login-form">
+        <h1>Add Dish</h1>
+        <form action="/admin/add-product" enctype="multipart/form-data" method="POST">
+            <div class="input-section">
+                <input type="text" name="name" required>
+                <label>Name</label>
+            </div>
+            <div class="input-section">
+                <label>Brand</label>
+                <input type="text" name="brand" >
+            </div>
+            <div class="input-section">
+                <label>Category</label>
+                <input type="text" name="category" required>
+            </div>
+            <div class="input-section">
+                <label>Description</label>
+                <input type="text" name="description" >
+            </div>
+            <div class="input-section">
+                <label>Price</label>
+                <input type="text" name="price" required>
+            </div>
+            <img src="" style="width: 100px;" id="prodimage1">
+            <div class="input-section">
+                <label>Image 1</label>
+                <input type="file" name="image" onchange="viewImage(event,'image1')" required>
+            </div>
+             <img src="" style="width: 100px;" id="prodimage2">
+            <div class="input-section">
+                <label>Image 2</label>
+                <input type="file" name="image" onchange="viewImage(event, 'image2')" >
+            </div>
+            <img src="" style="width: 100px;" id="prodimage3">
+            <div class="input-section">
+                <label>Image 3</label>
+                <input type="file" name="image" onchange="viewImage(event, 'image3')"   >
+            </div>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</div>

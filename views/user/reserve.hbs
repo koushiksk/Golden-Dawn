@@ -1,0 +1,76 @@
+
+<marquee behavior="scroll" >We  accept table reservation only for Today </marquee>
+<div class="container">
+    <div class="login-container">
+        <div class="login-form">
+          <h1>
+            Table Reservation
+          </h1>
+          <h4>
+           
+          </h4>
+          <form autocomplete="off"   onsubmit="book(event)" action="/reserve">  <!---->
+            <div class="input-section">
+              <input type="text" name="username" required />
+              <label>
+               Name
+              </label>
+            </div>
+            <div class="input-section">
+              <input
+                type="text"
+                pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+                name="mobileno"
+                required
+              />
+              <label>
+                Mobile-No
+              </label>
+            </div>
+            <div class="input-section">
+              <input
+                type="email"
+                name="email"
+                required
+              />
+              <label>
+                Email
+              </label>
+            </div>
+           
+               <div class="input-section">
+                <input 
+                  type="time"
+                  pattern="[0-9]"
+                  name="time" 
+                   min="10:00"
+                   max="19:00"
+                   
+                  required
+                />
+                 <span class="validity"></span>
+                <label>
+                  Time  (choose from 10 AM to 7 PM)
+                </label>
+              </div>
+            
+              <div class="input-section">
+                <input
+                  type="number"
+                  pattern="[0-9]"
+                  name="members"
+                  required
+                />
+                <label>
+                  Members
+                </label>
+              </div>
+            
+
+
+            <input type="submit" value="Book" />
+          </form>
+        </div>
+      </div>
+    
+</div>

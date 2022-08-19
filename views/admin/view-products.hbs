@@ -1,0 +1,141 @@
+<div class="menu-container" id="menu">
+  <span onclick="toggleMenu()">
+    ×
+  </span>
+  <a href="/admin">
+    All Product
+  </a>
+  <a href="/">
+    User Panel
+  </a>
+  <a href="/admin/allorders">
+    All Orders
+  </a>
+  <a href="/admin/allusers">
+    All Users
+  </a>
+  <a href="/admin/add-product" class="add-product">
+    Add Product
+  </a>
+  <a href="/logout" onclick="return confirm('Do You Want to logout ?')">
+    Logout
+  </a>
+</div>
+<header>
+  <div class="navbar">
+    <a href="/admin" class="logo">
+      Admin Panel
+    </a>
+    <div class="nav-links">
+      <a href="/admin">
+        All Dishes
+      </a>
+      <a href="/">
+        User Panel
+      </a>
+      <a href="/admin/allorders">
+        All Orders
+      </a>
+      <a href="/admin/allusers">
+        All Users
+      </a>
+      <a href="/admin/add-product" class="notification">
+        <span>
+          Add Dish
+        </span>
+      </a>
+      <a
+        href="/logout"
+        id="logout-normal"
+        class="notification"
+        onclick="return confirm('Do You Want to logout ?')"
+      >
+        <span>
+          Logout
+        </span>
+      </a>
+    </div>
+    <div class="menu">
+      <i class="fas fa-bars" onclick="toggleMenu()"></i>
+    </div>
+  </div>
+  <div class="search" style="display: none;">
+    <form action="/admin/search" method="GET">
+      <div class="input">
+        <input
+          type="text"
+          name="query"
+          placeholder="Serach.."
+          value="{{query}}"
+          required
+        />
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</header>
+
+
+{{#if products}}
+<div class="cart">
+  {{#each products}}
+  <div class="cart-container">
+    <div class="cart-admin-image">
+      <div class="slide" id="{{this._id}}">
+        <a href="/admin/edit-images/image1/{{this._id}}/{{this.image1}}">
+          <img  class="menu-img" src="/images/product-images/{{this.image1}}{{this._id}}.jpg" />
+        </a>
+      </div>
+      <!--<div class="slide">
+        <a href="/admin/edit-images/image2/{{this._id}}/{{this.image2}}">
+          <img src="/images/product-images/{{this.image2}}{{this._id}}.jpg" />
+        </a>
+      </div>
+      <div class="slide">
+        <a href="/admin/edit-images/image3/{{this._id}}/{{this.image3}}">
+          <img src="/images/product-images/{{this.image3}}{{this._id}}.jpg" />
+        </a>
+      </div>-->
+    </div>
+    <div class="cart-content">
+      <h1>
+        {{this.name}}
+      </h1>
+      <p>
+        {{this.brand}}
+      </p>
+      <p>
+        {{this.category}}
+      </p>
+      <p>
+        {{this.description}}
+      </p>
+      <p>
+        Rs. {{this.price}}
+      </p>
+      <div class="btn-section">
+        <a href="/admin/edit-product/{{this._id}}">
+          <button>
+            Edit Details
+          </button>
+        </a>
+        <a href="/admin/delete-product/{{this._id}}/{{this.image1}}/{{this.image2}}/{{this.image3}}">
+          <button onclick="return confirm('Do You Want to Delete {{this.name}}?')" class="delete-btn">
+            Delete
+          </button>
+        </a>
+      </div>
+      <span>Click the image you want to edit</span>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{else}}
+<div class="empty">
+    <h1>
+        No Products Found
+    </h1>
+</div>
+{{/if}}

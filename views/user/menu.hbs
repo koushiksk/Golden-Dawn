@@ -1,0 +1,53 @@
+{{#if products}}
+<div class="cart">
+  {{#each products}}
+  <div class="cart-container">
+    <div class="cart-admin-image">
+      <div class="slide" id="{{this._id}}">
+        
+          <img class="menu-img" src="/images/product-images/{{this.image1}}{{this._id}}.jpg" />
+        
+      </div>
+      <!--<div class="slide">
+
+          <img src="/images/product-images/{{this.image2}}{{this._id}}.jpg" />
+        
+      </div>
+      <div class="slide">
+          <img src="/images/product-images/{{this.image3}}{{this._id}}.jpg" />
+      </div>-->
+    </div>
+    <div class="cart-content">
+      <h1>
+        {{this.name}}
+      </h1>
+      <p>
+        {{this.brand}}
+      </p>
+      <p>
+        {{this.category}}
+      </p>
+      <p>
+        {{this.description}}
+      </p>
+      <p>
+        Rs. {{this.price}}
+      </p>
+       <div class="btn-section">
+      <button onclick="addToCart('{{this._id}}','{{this.name}}')" data-aos="zoom-in-up">
+        Add to Cart
+      </button>
+       
+      </div>
+       
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{else}}
+<div class="empty">
+    <h1>
+        No Products Found
+    </h1>
+</div>
+{{/if}}

@@ -1,0 +1,52 @@
+{{#if product}}
+<div class="cart">
+  {{#each product}}
+  <div class="cart-container" id="t{{this.product._id}}">
+    <div class="cart-image">
+      <img src="./images/product-images/{{this.product.image1}}{{this.product._id}}.jpg" />
+    </div>
+    <div class="cart-content">
+      <h1>
+        {{this.product.name}}
+      </h1>
+      <p>
+        Rs .
+        {{this.product.price}}
+      </p>
+      <div class="btn-section">
+        <button class="count-button" id="m{{this.item}}"
+          onclick="quantity('{{this._id}}','{{this.product._id}}', -1, '{{this.product.price}}')">
+          -
+        </button>
+        <span id="{{this.product._id}}">
+          {{this.quantity}}
+        </span>
+        <button class="count-button" onclick="quantity('{{this._id}}','{{this.product._id}}', 1, '{{this.product.price}}')">
+          +
+        </button>
+        <br />
+        <button class="delete-btn" onclick="deleteCartItem('{{this._id}}', '{{this.product._id}}' ,'{{this.product.name}}' , '{{this.product.price}}')">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<div class="checkout">
+  <div>
+    <h3>Total Amuont</h3>
+    <h3>Rs. <span id="total">{{total}}</span></h3>
+  </div>
+  <a href="/place-order">
+    Place Order
+  </a>
+</div>
+{{else}}
+<div class="empty">
+  <h1>
+     
+    <img src="https://professionalscareer.com/assets/images/emptycart.png" alt="">
+  </h1>
+</div>
+{{/if}}

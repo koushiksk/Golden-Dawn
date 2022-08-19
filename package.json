@@ -1,0 +1,30 @@
+{
+  "name": "GoldenDawn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "debug": "^2.6.9",
+    "dotenv": "^8.6.0",
+    "epress": "0.0.1-security",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "express-subdomain": "^1.0.5",
+    "hbs": "^4.1.2",
+    "http-errors": "^1.6.3",
+    "mongodb": "^3.6.11",
+    "mongoose": "^6.0.2",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.13",
+    "razorpay": "^2.0.6"
+  },
+  "devDependencies": {}
+}

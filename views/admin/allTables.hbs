@@ -1,0 +1,41 @@
+<div class="all-users">
+  <table>
+    <tr>
+      <th>
+         ID
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Mobile
+      </th>
+      <th>
+          Date & Time
+      </th>
+      <th>
+          Members
+      </th>
+
+    </tr>
+    {{#each tables}}
+      <tr>
+        <td>
+          {{this._id}}
+        </td>
+        <td>
+          {{this.name}}
+        </td>
+        <td>
+          {{this.mobile}}
+        </td>
+        <td>
+            {{this.date}}
+        </td>
+        <td>
+            {{this.members}}
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
